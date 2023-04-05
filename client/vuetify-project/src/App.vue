@@ -17,7 +17,7 @@ import FooterVue from "./components/FooterVue.vue"
 export default {
   data() {
     return {
-      count: 0
+      
     }
   },
   components: {
