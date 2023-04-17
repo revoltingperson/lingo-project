@@ -1,11 +1,7 @@
 // Utilities
 import { defineStore } from "pinia";
-
-export const useAppStore = defineStore("app", {
+import axios from "axios";
+export const useTaskStore = defineStore("tasks", {
   state: () => ({
-    
   }),
-  actions: {
-    
-  }
 });

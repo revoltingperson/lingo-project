@@ -82,8 +82,10 @@
 
 <script>
 import PartsOfSpeech from '@/components/PartsOfSpeech.vue';
-
 export default {
+  setup() {
+      
+  },
   data() {
     return {
       mainImage: '../../src/assets/main_image.jpg',

@@ -6,6 +6,7 @@
 
 // Components
 import App from "./App.vue";
+import axios from 'axios';
 
 // Composables
 import { createApp } from "vue";
@@ -17,4 +18,5 @@ const app = createApp(App);
 
 registerPlugins(app);
 
+axios.defaults.baseURL = import.meta.env.VITE_API_URL
 app.mount("#app");
