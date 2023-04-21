@@ -31,12 +31,12 @@ def generate_task_thread():
             event.wait()
             app_log.info(f"q size before: {grammar_tasks.qsize()}")
         else:
-            tasks += 1
             start = time.time()
             with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
                 dics_for_resp = [executor.submit(generate_one) for _ in range(MAX_TASKS - grammar_tasks.qsize())]
                 for future in concurrent.futures.as_completed(dics_for_resp):
                     try:
+                        tasks += 1
                         wanted_dic = future.result()
                         grammar_tasks.put(wanted_dic)
                     except Exception as exc:
