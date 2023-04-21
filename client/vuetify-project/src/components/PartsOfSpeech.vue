@@ -24,7 +24,6 @@ import DotLoader from './DotLoader.vue'
 export default {
   data() {
     return {
-      wordsToReq: 7,
       gameFinished: false,
       finalStatement: "",
       correctOptions: 0,
@@ -74,8 +73,7 @@ export default {
       this.gameFinished = false
       this.buttonsInfo = null
       this.posNow = null
-      axios.get(`/get-new-tasks/`,
-      { params: { 'word_count': this.wordsToReq } })
+      axios.get(`/get-new-task/`)
         .then(response => {
           this.buttonsInfo = response.data.set;
           this.posNow = response.data.target
