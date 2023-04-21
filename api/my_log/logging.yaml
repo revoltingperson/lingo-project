@@ -8,7 +8,7 @@ handlers:
     class: logging.handlers.RotatingFileHandler
     level: INFO
     formatter: timestamped
-    filename: requests.txt
+    filename: my_log/requests.txt
     maxBytes: 5000
 root:
   level: INFO

@@ -6,7 +6,7 @@ from settings import DEBUG
 
 log_formatter = logging.Formatter('%(asctime)s %(levelname)s %(funcName)s(%(lineno)d) %(message)s')
 
-logFile = Path.joinpath(Path.cwd(), 'log_activity.txt')
+logFile = Path.joinpath(Path.cwd(), 'my_log', 'log_activity.txt')
 if not exists(logFile):
     with open(logFile, 'w') as f:
         f.write('')
