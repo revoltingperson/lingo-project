@@ -1,6 +1,6 @@
 <template>
   <section>
-    <v-parallax :src="mainImage" class="image-container w-100">
+    <v-parallax :src="MainImage" class="image-container w-100">
       <div class="d-flex fill-height flex-column justify-center align-center text-white">
         <h4 class="text-orange subheading">
           Здесь вы найдете интересные материалы для английского языка
@@ -82,13 +82,13 @@
 
 <script>
 import PartsOfSpeech from '@/components/PartsOfSpeech.vue';
+import MainImage from '../../src/assets/main_image.jpg'
 export default {
   setup() {
-      
+      return { MainImage }
   },
   data() {
     return {
-      mainImage: '../../src/assets/main_image.jpg',
     }
   },
   components: {
