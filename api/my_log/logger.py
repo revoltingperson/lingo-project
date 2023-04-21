@@ -2,6 +2,7 @@ import logging
 from logging.handlers import RotatingFileHandler
 from pathlib import Path
 from os.path import exists
+from settings import DEBUG
 
 log_formatter = logging.Formatter('%(asctime)s %(levelname)s %(funcName)s(%(lineno)d) %(message)s')
 
@@ -17,5 +18,7 @@ my_handler.setLevel(logging.INFO)
 
 app_log = logging.getLogger('root')
 app_log.setLevel(logging.INFO)
-
-app_log.addHandler(my_handler)
+if DEBUG:
+    app_log.addHandler(logging.StreamHandler())
+else:
+    app_log.addHandler(my_handler)
