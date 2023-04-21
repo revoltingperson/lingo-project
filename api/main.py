@@ -1,6 +1,10 @@
 from fastapi import FastAPI, APIRouter
 from fastapi.middleware.cors import CORSMiddleware
+import uvicorn
+from settings import DEBUG
 from routes import grammar_task
+from my_log.log_conf import CONFIG_PROD, DEBUG_CONF
+from logging.config import dictConfig
 
 app = FastAPI()
 
@@ -20,5 +24,12 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# if __name__ == '__main__':
-#     uvicorn.run(app, host="0.0.0.0", port=8000)
+if not DEBUG:
+    dictConfig(CONFIG_PROD)
+else:
+    dictConfig(DEBUG_CONF)
+
+
+if DEBUG:
+    if __name__ == '__main__':
+        uvicorn.run(app, host="0.0.0.0", port=8000)

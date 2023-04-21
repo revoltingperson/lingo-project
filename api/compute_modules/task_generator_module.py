@@ -7,8 +7,9 @@ import concurrent.futures
 import aiohttp
 import asyncio
 from bs4 import BeautifulSoup
-from my_log.logger import app_log
+import logging
 
+app_log = logging.getLogger("activity")
 TOTAL_WORDS = 58109
 ONE_WORD = 0
 DICTIONARY_URL = "https://www.thefreedictionary.com/"
